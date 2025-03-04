@@ -31,6 +31,7 @@ CREATE INDEX user_status ON user (status);
 CREATE TABLE IF NOT EXISTS tenant (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL UNIQUE,
+    nickname VARCHAR(255) DEFAULT '',
     data MEDIUMTEXT,
     sync_users BOOL DEFAULT false,
     status TINYINT DEFAULT 0,
@@ -112,6 +113,7 @@ CREATE TABLE IF NOT EXISTS variable (
     name VARCHAR(60) NOT NULL,
     type VARCHAR(10) NOT NULL,
     value MEDIUMTEXT,
+    default_selected VARCHAR(255),
     description VARCHAR(255) DEFAULT '',
     datasource INTEGER,
     refresh VARCHAR(32),
@@ -202,6 +204,7 @@ CREATE INDEX datasource_team ON datasource (team_id);
 CREATE INDEX datasource_team_template ON datasource (team_id, template_id);
 
 CREATE TABLE IF NOT EXISTS star_dashboard (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
     user_id INTEGER NOT NULL,
     team_id INTEGER NOT NULL,
     dashboard_id VARCHAR(40) NOT NULL,
