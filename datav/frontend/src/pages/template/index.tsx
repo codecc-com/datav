@@ -239,7 +239,7 @@ const TemplateStore = () => {
       <Box>
         <VStack spacing='2' alignItems='center' p='4'>
           <Center>
-            <Image src='/public/rocket.svg' alt='rocket' width={150} />
+            <Image src='/rocket.svg' alt='rocket' width={150} />
           </Center>
           <Center>
             <Text fontWeight={550} fontSize={30}>
